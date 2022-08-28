@@ -8,12 +8,12 @@ services:
       - "8443:8443"
       - "8480:8480"
     environment:
-      - KEYSTORE_SECRET=secret
-      - KC_ADMIN_USERNAME=admin 
-      - KC_ADMIN_PASSWORD=admin
-      - KC_LOG_LEVEL=info
-      - DATABASE_URL=postgres://postgres:DHANPURA8@postgres:5432/dev
-      - PORT=8480
+      - KEYSTORE_SECRET
+      - KC_ADMIN_USERNAME 
+      - KC_ADMIN_PASSWORD
+      - KC_LOG_LEVEL
+      - DATABASE_URL
+      - PORT
     depends_on:
       - postgres
     links:
@@ -23,8 +23,8 @@ services:
     ports:
       - "5433:5432"
     environment:
-      - POSTGRES_PASSWORD=DHANPURA8
-      - POSTGRES_DB=dev
-      - POSTGRES_USER=postgres 
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_USER 
     volumes:
       - ./dbdata:/var/lib/postgresql/data

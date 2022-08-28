@@ -30,4 +30,6 @@ export KEYCLOAK_ADMIN_PASSWORD=${KC_ADMIN_PASSWORD}
 export KC_HTTPS_KEY_STORE_PASSWORD=${KEYSTORE_SECRET}
 
 export KC_HTTPS_PORT=8443
+# inject Heroku "PORT" binding as env varible to enable HTTP communication 
+# internally since SSL termination happens at heroku load balancers
 export KC_HTTP_PORT=$PORT
