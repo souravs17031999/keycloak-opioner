@@ -1,0 +1,30 @@
+version: "3"
+services:
+  keycloak:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"
+      - "8480:8480"
+    environment:
+      - KEYSTORE_SECRET=secret
+      - KC_ADMIN_USERNAME=admin 
+      - KC_ADMIN_PASSWORD=admin
+      - KC_LOG_LEVEL=info
+      - DATABASE_URL=postgres://postgres:DHANPURA8@postgres:5432/dev
+      - PORT=8480
+    depends_on:
+      - postgres
+    links:
+      - postgres
+  postgres:
+    image: postgres:13
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=DHANPURA8
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=postgres 
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
