@@ -14,3 +14,7 @@ deploy:
 local:
 	@echo "MAKE local ==========================================="
 	docker-compose up --build  
+
+clean:
+	@echo "MAKE clean ===========================================" 
+	opioner-commons/clean-dockers.sh 
