@@ -7,11 +7,10 @@ build:
 	@echo "MAKE build ==========================================="
 	opioner-commons/docker-flow.sh  
 
-test:
-	@echo "MAKE test ==========================================="
-	TEST_SUITE_DIR="apitest" \
-	opioner-commons/run-tests.sh  
-
 deploy:
 	@echo "MAKE heroku_deploy ===========================================" 
 	./deploy.sh 
+
+local:
+	@echo "MAKE local ==========================================="
+	docker-compose up --build  
