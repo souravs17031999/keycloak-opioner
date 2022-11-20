@@ -15,3 +15,8 @@ The cloud instance is now live and deployed on ```Render``` hosting platform.
 - KEYSTORE_SECRET
 - QUARKUS_HTTP_ACCESS_LOG_ENABLED
 - QUARKUS_HTTP_ACCESS_LOG_PATTERN
+
+# Setup 
+
+- Keycloak is used for Opioner as Identity Broker integrated with various social identity providers (google, facebook etc..).  
+- It's consumed by Opioner front-end gateway front channel communication and Authorization code flow is triggered with Keycloak and back channel communication is handled by public client.   
